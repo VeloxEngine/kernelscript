@@ -214,6 +214,27 @@ button, input, select, textarea {
   align-items: center;
 }
 
+/* Full Banners Wrapper (468x60) */
+.full-banners-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.full-banner-item {
+  width: 100%;
+  max-width: 468px;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 /* ==========================================================================
    Header & Navigation
    ========================================================================== */
