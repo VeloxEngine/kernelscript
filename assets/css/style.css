@@ -141,6 +141,20 @@ button, input, select, textarea {
   z-index: 10;
 }
 
+/* In-Body Native Banner Container */
+.in-body-banner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 2.75rem auto;
+  min-height: 50px;
+  position: relative;
+  z-index: 5;
+}
+
 /* ==========================================================================
    Header & Navigation
    ========================================================================== */
