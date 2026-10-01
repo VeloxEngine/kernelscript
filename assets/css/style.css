@@ -195,6 +195,25 @@ button, input, select, textarea {
   overflow: hidden;
 }
 
+/* Half-Skyscraper Banners Wrapper (160x300) */
+.half-skyscraper-banners-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.half-skyscraper-banner-item {
+  width: 160px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ==========================================================================
    Header & Navigation
    ========================================================================== */
