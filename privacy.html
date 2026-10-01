@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy // KERNELSCRIPT</title>
+  <meta name="description" content="Official Privacy Policy for KERNELSCRIPT: Data collection practices, server logging, cookie usage, local storage handling, and user privacy rights.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/post.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand-wrapper">
+        <a href="index.html" class="brand-logo">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          <span>KERNELSCRIPT</span>
+        </a>
+        <span class="brand-tagline">Systems & Automation</span>
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Feed</a></li>
+          <li><a href="index.html?filter=automation">Automation</a></li>
+          <li><a href="index.html?filter=hardware">Hardware</a></li>
+          <li><a href="index.html?filter=privacy">Privacy</a></li>
+          <li><a href="privacy.html" class="active">Legal</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="terminal-badge">
+          <span class="pulse-dot"></span>
+          <span>SYS_ONLINE</span>
+        </div>
+        <button id="mobile-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-overlay" class="mobile-nav-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-nav-drawer">
+    <div class="drawer-header">
+      <span class="brand-logo">KERNELSCRIPT</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">All Publications</a></li>
+      <li><a href="index.html?filter=automation">Automation</a></li>
+      <li><a href="index.html?filter=browser-tech">Browser Stealth</a></li>
+      <li><a href="index.html?filter=hardware">Hardware</a></li>
+      <li><a href="index.html?filter=privacy">Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+    </ul>
+  </aside>
+
+  <main class="article-container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Root</a>
+      <span class="separator">/</span>
+      <span class="current">Privacy Policy</span>
+    </nav>
+
+    <header class="legal-page-header">
+      <span class="legal-notice-badge">LEGAL SPECIFICATION // DOC-ID: PRIV-2026</span>
+      <h1 class="article-title">Privacy Policy</h1>
+      <p class="legal-date">Last Updated &amp; Effective: October 1, 2026</p>
+    </header>
+
+    <div class="article-content">
+      <div class="callout alert-success">
+        <div class="callout-title">Core Privacy Commitment</div>
+        KERNELSCRIPT is founded upon principles of data minimization and engineering integrity. We do not sell user data, we do not deploy invasive third-party cross-site trackers, and our web infrastructure collects only the telemetry technically necessary to serve content reliably.
+      </div>
+
+      <section class="legal-section">
+        <h2>1. Scope and Identity of Data Controller</h2>
+        <p>This Privacy Policy governs the processing of personal and technical data collected by <strong>KERNELSCRIPT</strong> ("we", "us", "our", or "the Platform") through our digital publication website and associated services. For the purposes of the General Data Protection Regulation (GDPR) (EU) 2016/679 and applicable United States state privacy frameworks (including CCPA/CPRA), KERNELSCRIPT operates as the independent Data Controller.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. Information We Collect</h2>
+        <p>In accordance with the principle of data minimization, we restrict data ingestion to strictly operational categories:</p>
+        <ul>
+          <li><strong>Automated Server Access Logs</strong>: When your browser requests assets from our web servers, standard access logs record your IP address, browser User-Agent string, referring URL, HTTP method, timestamp, and byte transfer metrics. These logs are stored temporarily for security intrusion detection, DDoS mitigation, and server health analysis, and are automatically purged after 30 days.</li>
+          <li><strong>Voluntary Communiqué / Newsletter Subscriptions</strong>: If you elect to subscribe to our engineering dispatches via our terminal interface, we collect your provided email address. This address is used solely to deliver periodic technical publications and can be revoked at any time via a single-click unsubscribe header.</li>
+          <li><strong>Client-Side Local Storage</strong>: Our site utilizes client-side <code>localStorage</code> purely to remember your UI preferences (such as filtering preferences and dark theme options). No tracking identifiers, cross-domain cookies, or fingerprint hashes are stored in your local storage.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. Lawful Basis for Processing (GDPR Article 6)</h2>
+        <p>We process personal telemetry under the following recognized legal bases:</p>
+        <div class="table-wrapper">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th>Data Category</th>
+                <th>Primary Purpose</th>
+                <th>Lawful Basis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IP &amp; Access Headers</td>
+                <td>Network routing, DDoS mitigation, threat detection</td>
+                <td>Legitimate Interest (Art. 6(1)(f))</td>
+              </tr>
+              <tr>
+                <td>Email Address</td>
+                <td>Delivery of technical articles and releases</td>
+                <td>Explicit Consent (Art. 6(1)(a))</td>
+              </tr>
+              <tr>
+                <td>Local Preferences</td>
+                <td>Persistent dark mode and UI display state</td>
+                <td>Legitimate Interest (Art. 6(1)(f))</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="legal-section">
+        <h2>4. Cookies and Web Storage Architecture</h2>
+        <p>KERNELSCRIPT avoids invasive third-party advertising cookie networks. We do not use third-party behavioral profiling scripts. Any temporary session cookies or local web storage keys utilized by the platform are strictly classified as "Essential" or "Functional" under ePrivacy Directive guidelines, requiring no invasive cookie consent banners that degrade the reading experience.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>5. Third-Party Infrastructure and Content Delivery Networks (CDNs)</h2>
+        <p>To deliver high-speed web pages globally with sub-50ms latency, our static assets may be cached across international Content Delivery Networks (CDNs) and DNS providers (e.g., Cloudflare, GitHub Pages, or AWS CloudFront). These infrastructure providers process transient IP routing information in strict compliance with Standard Contractual Clauses (SCCs) and enterprise data processing agreements.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>6. Data Subject Rights Under GDPR &amp; CCPA</h2>
+        <p>Depending on your geographic jurisdiction, you hold enforceable rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Right of Access &amp; Portability</strong>: You may request confirmation of whether we hold any personal data regarding you and obtain an export.</li>
+          <li><strong>Right to Rectification &amp; Erasure ("Right to be Forgotten")</strong>: You may demand the permanent deletion of your subscribed email address from our transmission databases.</li>
+          <li><strong>Right to Restrict or Object to Processing</strong>: You may withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal.</li>
+          <li><strong>Non-Discrimination (CCPA)</strong>: We will never deny service, vary content quality, or charge different prices for exercising your statutory privacy rights.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>7. Data Security and Cryptographic Standards</h2>
+        <p>All transport across KERNELSCRIPT is enforced over HTTPS utilizing TLS 1.3 encryption with strict HTTP Strict Transport Security (HSTS) preloading. Internal communications and dispatch registries are protected with physical FIDO2 authentication and end-to-end cryptographic safeguards.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>8. Updates and Contact Channel</h2>
+        <p>We reserve the right to revise this Privacy Policy to reflect evolving technical architecture or statutory compliance requirements. Material modifications will be indicated by updating the "Effective Date" at the top of this document.</p>
+        <p>For inquiries, subject access requests, or privacy concerns, please contact the systems administrator at: <code>privacy@kernelscript.local</code>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            <span>KERNELSCRIPT</span>
+          </div>
+          <p class="footer-bio">An independent technical journal dedicated to low-level systems programming, hardware optimization, browser internals, and workflow automation.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">System Feed</a></li>
+            <li><a href="index.html?filter=automation">Automation</a></li>
+            <li><a href="index.html?filter=hardware">Hardware Specs</a></li>
+            <li><a href="index.html?filter=privacy">Privacy Protocols</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Legal &amp; Compliance</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Affiliate &amp; Info Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 KERNELSCRIPT. All systems operational.</span>
+        <div class="footer-status-pill">
+          <span class="pulse-dot"></span>
+          <span>COMPLIANCE STATUS: ENFORCED</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/post.js"></script>
+</body>
+</html>

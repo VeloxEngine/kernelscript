@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building Your Own Custom Productivity Scripts // KERNELSCRIPT</title>
+  <meta name="description" content="A systems developer's blueprint for crafting tailored personal automation scripts: Unix pipes, Raycast script commands, and shell glue.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/post.css">
+</head>
+<body>
+  <div class="reading-progress-container">
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand-wrapper">
+        <a href="../index.html" class="brand-logo">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          <span>KERNELSCRIPT</span>
+        </a>
+        <span class="brand-tagline">Systems & Automation</span>
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">Feed</a></li>
+          <li><a href="../index.html?filter=automation">Automation</a></li>
+          <li><a href="../index.html?filter=hardware">Hardware</a></li>
+          <li><a href="../index.html?filter=privacy">Privacy</a></li>
+          <li><a href="../privacy.html">Legal</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="terminal-badge">
+          <span class="pulse-dot"></span>
+          <span>SYS_ONLINE</span>
+        </div>
+        <button id="mobile-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-overlay" class="mobile-nav-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-nav-drawer">
+    <div class="drawer-header">
+      <span class="brand-logo">KERNELSCRIPT</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="../index.html">All Publications</a></li>
+      <li><a href="../index.html?filter=automation">Automation</a></li>
+      <li><a href="../index.html?filter=browser-tech">Browser Stealth</a></li>
+      <li><a href="../index.html?filter=hardware">Hardware</a></li>
+      <li><a href="../index.html?filter=privacy">Privacy</a></li>
+      <li><a href="../privacy.html">Privacy Policy</a></li>
+      <li><a href="../terms.html">Terms of Service</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+    </ul>
+  </aside>
+
+  <main class="article-container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../index.html">Root</a>
+      <span class="separator">/</span>
+      <a href="../index.html?filter=automation">Automation</a>
+      <span class="separator">/</span>
+      <span class="current">Productivity Scripting</span>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-tags-row">
+        <span class="card-tag">BASH / SHELL</span>
+        <span class="card-tag">DEVELOPER VELOCITY</span>
+        <span class="card-tag">SYSTEMS AUTOMATION</span>
+      </div>
+      <h1 class="article-title">Building Your Own Custom Productivity Scripts</h1>
+      <p class="article-subtitle">Stop settling for inflexible generic SaaS apps: Designing lightweight, bespoke shell scripts and CLI dispatchers that glue your everyday engineering workflows together.</p>
+
+      <div class="article-meta-bar">
+        <div class="author-chip">
+          <div class="author-avatar">AT</div>
+          <div class="author-details">
+            <span class="author-name">Alex Thorne</span>
+            <span class="author-role">Staff Automation Engineer</span>
+          </div>
+        </div>
+        <div class="meta-stats">
+          <span>Published: Oct 2026</span>
+          <span>•</span>
+          <span>8 min read</span>
+          <span>•</span>
+          <span>Word Count: 710+</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="toc-box">
+      <div class="toc-title">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span>Architectural Outline</span>
+      </div>
+      <ul class="toc-list">
+        <li><a href="#bespoke-automation-mindset">1. The Bespoke Automation Mindset</a></li>
+        <li><a href="#identifying-high-friction-loops">2. Identifying High-Friction Operational Loops</a></li>
+        <li><a href="#bash-script-patterns">3. Shell Ergonomics: Bash Strict Mode and Argument Handling</a></li>
+        <li><a href="#production-script-workspace">4. Production Code: Instant Workstation Context Switcher</a></li>
+        <li><a href="#quick-launchers-hotkeys">5. Binding Scripts to Global Hotkeys and System Launchers</a></li>
+        <li><a href="#maintaining-dotfiles">6. Version Controlling Personal Productivity Tooling</a></li>
+      </ul>
+    </section>
+
+    <article class="article-content">
+      <h2 id="bespoke-automation-mindset">1. The Bespoke Automation Mindset</h2>
+      <p>Modern software engineers are bombarded with commercial productivity applications: task managers with proprietary syncing algorithms, heavy Electron note-taking apps that consume 2GB of RAM, and web dashboard orchestrators. Yet, virtually none of these applications adapt to the unique nuances of your local terminal, file tree, and git workflows.</p>
+      <p>True operational efficiency comes from building your own lightweight productivity scripts. A custom 40-line Bash or Python script tailored specifically to your mental model will always outperform a bloated generic SaaS subscription.</p>
+
+      <h2 id="identifying-high-friction-loops">2. Identifying High-Friction Operational Loops</h2>
+      <p>Before writing code, analyze your daily friction points using the <strong>5-minute rule</strong>: If you perform an identical sequence of terminal commands, window arrangements, or file transfers more than three times a week, it warrants automated scripting.</p>
+      <p>Prime candidates for personal automation scripts include:</p>
+      <ul>
+        <li><strong>Project Context Switching</strong>: Killing background databases, pulling latest main branch, updating dependencies, and launching specific IDE windows.</li>
+        <li><strong>Meeting Preparation</strong>: Toggling your microphone noise-suppression profiles, muting notification daemons, and opening collaborative scratchpads.</li>
+        <li><strong>Ephemeral Scratchpads</strong>: Instant terminal keybindings that open a timestamped markdown file in Neovim, automatically committing notes on exit.</li>
+      </ul>
+
+      <h2 id="bash-script-patterns">3. Shell Ergonomics: Bash Strict Mode and Argument Handling</h2>
+      <p>When authoring shell scripts that manipulate files, always begin with <strong>Bash Strict Mode</strong>. Without these flags, a failed command in the middle of a pipeline will fail silently, allowing subsequent destructive commands to execute on empty variables:</p>
+
+      <div class="code-wrapper">
+        <div class="code-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="code-title">strict_boilerplate.sh // Robust Bash Invariants</span>
+          <button class="btn-copy">COPY</button>
+        </div>
+        <pre><code class="language-bash">#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# -e: Exit immediately if any command returns a non-zero status
+# -u: Treat unset variables and parameters as fatal errors
+# -o pipefail: Pipeline return code matches the last command that failed
+# IFS: Prevents hazardous word splitting on whitespace in loops</code></pre>
+      </div>
+
+      <h2 id="production-script-workspace">4. Production Code: Instant Workstation Context Switcher</h2>
+      <p>Here is a field-proven productivity script that automates spinning up a focused development environment for any registered repository, launching Docker services, opening the editor, and creating a dedicated tmux session:</p>
+
+      <div class="code-wrapper">
+        <div class="code-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="code-title">dev-env.sh // Workstation Context Switcher</span>
+          <button class="btn-copy">COPY</button>
+        </div>
+        <pre><code class="language-bash">#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_NAME="${1:-}"
+REPOS_DIR="$HOME/repositories"
+
+if [[ -z "$PROJECT_NAME" ]]; then
+  echo "Usage: dev-env <project-name>"
+  echo "Available workspaces:"
+  ls -1 "$REPOS_DIR"
+  exit 1
+fi
+
+TARGET_PATH="$REPOS_DIR/$PROJECT_NAME"
+
+if [[ ! -d "$TARGET_PATH" ]]; then
+  echo "[-] Target repository does not exist: $TARGET_PATH"
+  exit 2
+fi
+
+echo "[+] Initializing workspace context: $PROJECT_NAME"
+cd "$TARGET_PATH"
+
+# Pull latest commits if on main/master
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$CURRENT_BRANCH" == "main" || "$CURRENT_BRANCH" == "master" ]]; then
+  echo "[*] Synchronizing git upstream..."
+  git pull --rebase || echo "[!] Notice: Upstream rebase had warnings"
+fi
+
+# Conditionally start Docker Compose dependencies if present
+if [[ -f "docker-compose.yml" ]]; then
+  echo "[*] Starting backing services via Docker..."
+  docker compose up -d
+fi
+
+# Launch IDE in detached background mode
+code .
+
+# Attach or create interactive tmux session
+if tmux has-session -t "$PROJECT_NAME" 2>/dev/null; then
+  echo "[+] Attaching to existing tmux session..."
+  tmux attach-session -t "$PROJECT_NAME"
+else
+  echo "[+] Spawning dedicated tmux session..."
+  tmux new-session -s "$PROJECT_NAME"
+fi</code></pre>
+      </div>
+
+      <h2 id="quick-launchers-hotkeys">5. Binding Scripts to Global Hotkeys and System Launchers</h2>
+      <p>A productivity script is only as good as the speed with which it can be invoked. Having to open a terminal, type <code>cd ~/scripts &amp;&amp; ./script.sh</code> negates the speed advantage. Map your scripts into global desktop launchers:</p>
+      <ul>
+        <li><strong>Linux (sway / i3 / GNOME)</strong>: Bind scripts to key chords like <code>Super+Shift+D</code> inside your window manager configuration.</li>
+        <li><strong>macOS (Raycast / Alfred)</strong>: Place scripts in your Raycast Script Commands directory (<code>~/.config/raycast/scripts/</code>) to execute them via a fuzzy search bar with live HUD toast alerts.</li>
+        <li><strong>Windows (AutoHotkey / PowerToys Run)</strong>: Trigger PowerShell scripts instantaneously using simple single-chord hotstrings.</li>
+      </ul>
+
+      <h2 id="maintaining-dotfiles">6. Version Controlling Personal Productivity Tooling</h2>
+      <p>Treat your personal productivity scripts as a first-class engineering project. Maintain them in a public or private <code>dotfiles</code> repository using bare git repos or tools like <code>stow</code>. Whenever you switch laptops or provision a new remote cloud server, a single <code>git clone</code> will instantly restore your finely crafted developer environment.</p>
+    </article>
+
+    <footer class="article-footer">
+      <div class="post-author-box">
+        <div class="author-avatar" style="width: 56px; height: 56px; font-size: 1.25rem;">AT</div>
+        <div>
+          <div class="author-name" style="font-size: 1.1rem;">Alex Thorne</div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">Staff Automation Engineer focusing on low-level system orchestration, resilient Python services, and cross-platform infrastructure automation.</p>
+        </div>
+      </div>
+
+      <div class="post-nav-grid">
+        <a href="privacy-protocols-digital-footprint.html" class="post-nav-card">
+          <span class="post-nav-label">← PREVIOUS PUBLICATION</span>
+          <span class="post-nav-title">Privacy Protocols: Keeping Your Digital Footprint Minimal</span>
+        </a>
+        <a href="../index.html" class="post-nav-card">
+          <span class="post-nav-label">RETURN TO INDEX →</span>
+          <span class="post-nav-title">Explore All 10 Publications</span>
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            <span>KERNELSCRIPT</span>
+          </div>
+          <p class="footer-bio">An independent technical journal dedicated to low-level systems programming, hardware optimization, browser internals, and workflow automation.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="../index.html">System Feed</a></li>
+            <li><a href="../index.html?filter=automation">Automation</a></li>
+            <li><a href="../index.html?filter=hardware">Hardware Specs</a></li>
+            <li><a href="../index.html?filter=privacy">Privacy Protocols</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Legal &amp; Compliance</h4>
+          <ul class="footer-nav-list">
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+            <li><a href="../disclaimer.html">Affiliate &amp; Info Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 KERNELSCRIPT. All systems operational.</span>
+        <div class="footer-status-pill">
+          <span class="pulse-dot"></span>
+          <span>KERNEL: v4.19-LTS // LATENCY: 11MS</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/post.js"></script>
+</body>
+</html>
